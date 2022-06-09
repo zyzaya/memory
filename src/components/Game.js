@@ -1,3 +1,13 @@
+import Card from './Card';
+
 export default function Game() {
-  return <div className="Game">Game</div>;
+  let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+
+  return (
+    <div className="Game">
+      {colors.map((color) => (
+        <Card color={color} text={color} />
+      ))}
+    </div>
+  );
 }
