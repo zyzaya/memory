@@ -7,7 +7,6 @@ import uniqid from 'uniqid';
 import { useState } from 'react';
 
 function App() {
-  // let cards = [];
   function generateCards() {
     let new_cards = [];
     for (let i = 0; i < 12; i++) {
@@ -21,10 +20,21 @@ function App() {
   }
 
   const [cards, setCards] = useState(generateCards());
+  function shuffleCards() {
+    // Fisher-Yates algorithm
+    let new_cards = cards.map((e) => e);
+    for (let i = new_cards.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [new_cards[i], new_cards[j]] = [new_cards[j], new_cards[i]];
+    }
+    setCards(new_cards);
+  }
+
   const [score, setScore] = useState(0);
 
   function handleSuccess() {
     setScore(score + 1);
+    shuffleCards();
   }
 
   function handleLoss() {
