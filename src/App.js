@@ -1,8 +1,21 @@
 import './styles/App.css';
 import Game from './components/Game';
 import Score from './components/Score';
+import Please from 'pleasejs';
+import { faker } from '@faker-js/faker';
+import uniqid from 'uniqid';
 
 function App() {
+  let cards = [];
+
+  for (let i = 0; i < 12; i++) {
+    cards.push({
+      color: Please.make_color(),
+      text: faker.name.firstName(),
+      key: uniqid(),
+    });
+  }
+
   return (
     <div className="App">
       <header>
@@ -13,7 +26,7 @@ function App() {
         <Score />
       </header>
 
-      <Game />
+      <Game cards={cards} />
     </div>
   );
 }
