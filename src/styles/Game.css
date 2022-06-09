@@ -1,0 +1,9 @@
+.Game {
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.Game > div {
+  flex-grow: 1;
+}
