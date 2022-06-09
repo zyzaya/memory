@@ -7,8 +7,6 @@ export default function Game() {
   let colors = [];
   for (let i = 0; i < 12; i++) colors.push(Please.make_color());
 
-  console.log(faker.color);
-
   return (
     <div className="Game">
       {colors.map((color) => (

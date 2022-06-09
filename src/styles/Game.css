@@ -1,9 +1,5 @@
 .Game {
   width: 100%;
-  flex-wrap: wrap;
-  display: flex;
-}
-
-.Game > div {
-  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
