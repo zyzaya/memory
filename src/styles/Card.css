@@ -1,3 +1,8 @@
+.Card {
+  background-color: inherit;
+  border: none;
+}
+
 .Decor {
   --size: 150px;
   margin: auto;
