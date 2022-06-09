@@ -9,8 +9,10 @@ export default function Game(props) {
   function handleClick(key) {
     if (!clicked.includes(key)) {
       setClicked(clicked.concat(key));
+      props.onsuccess();
       console.log(clicked, key);
     } else {
+      props.onlose();
       console.log('you lose');
     }
   }

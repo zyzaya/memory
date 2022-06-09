@@ -4,16 +4,30 @@ import Score from './components/Score';
 import Please from 'pleasejs';
 import { faker } from '@faker-js/faker';
 import uniqid from 'uniqid';
+import { useState } from 'react';
 
 function App() {
   let cards = [];
 
-  for (let i = 0; i < 12; i++) {
-    cards.push({
-      color: Please.make_color(),
-      text: faker.name.firstName(),
-      key: uniqid(),
-    });
+  function generateCards() {
+    for (let i = 0; i < 12; i++) {
+      cards.push({
+        color: Please.make_color(),
+        text: faker.name.firstName(),
+        key: uniqid(),
+      });
+    }
+  }
+
+  const [score, setScore] = useState(0);
+
+  function handleSuccess() {
+    setScore(score + 1);
+  }
+
+  function handleLoss() {
+    setScore(0);
+    generateCards();
   }
 
   return (
@@ -26,7 +40,7 @@ function App() {
         <Score />
       </header>
 
-      <Game cards={cards} />
+      <Game cards={cards} onsuccess={handleSuccess} onlose={handleLoss} />
     </div>
   );
 }
