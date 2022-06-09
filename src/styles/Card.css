@@ -1,7 +1,3 @@
-.Card {
-  display: inline-block;
-}
-
 .Decor {
   --size: 150px;
   margin: auto;
@@ -9,4 +5,10 @@
   max-height: var(--size);
   min-width: var(--size);
   max-width: var(--size);
+}
+
+.Info {
+  width: 50%;
+  margin: auto;
+  text-align: center;
 }

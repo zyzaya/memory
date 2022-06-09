@@ -10,7 +10,7 @@ export default function Game() {
   return (
     <div className="Game">
       {colors.map((color) => (
-        <Card color={color} text={faker.name.findName()} />
+        <Card color={color} text={faker.name.firstName()} />
       ))}
     </div>
   );
