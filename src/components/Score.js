@@ -1,6 +1,8 @@
+import '../styles/Score.css';
+
 export default function Score() {
   return (
-    <div>
+    <div className="Score">
       <div>
         <span>Score:</span>
         <span>0</span>

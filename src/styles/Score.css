@@ -1,0 +1,12 @@
+.Score {
+  align-self: flex-end;
+}
+
+.Score > div{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  min-width: 150px;
+  width: 50%;
+  margin: auto;
+}
+
