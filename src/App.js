@@ -7,18 +7,20 @@ import uniqid from 'uniqid';
 import { useState } from 'react';
 
 function App() {
-  let cards = [];
-
+  // let cards = [];
   function generateCards() {
+    let new_cards = [];
     for (let i = 0; i < 12; i++) {
-      cards.push({
+      new_cards.push({
         color: Please.make_color(),
         text: faker.name.firstName(),
         key: uniqid(),
       });
     }
+    return new_cards;
   }
 
+  const [cards, setCards] = useState(generateCards());
   const [score, setScore] = useState(0);
 
   function handleSuccess() {
@@ -27,7 +29,7 @@ function App() {
 
   function handleLoss() {
     setScore(0);
-    generateCards();
+    setCards(generateCards());
   }
 
   return (
@@ -37,7 +39,7 @@ function App() {
           <h1>Colour Memory Game</h1>
           <span>Click the colour but don't click the same one twice!</span>
         </div>
-        <Score />
+        <Score score={score} />
       </header>
 
       <Game cards={cards} onsuccess={handleSuccess} onlose={handleLoss} />
