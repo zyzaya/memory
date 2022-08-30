@@ -5,11 +5,13 @@ Site can be viewed at https://zyzaya.github.io/memory/.
 
 Additional information can be found at https://www.theodinproject.com/lessons/javascript-memory-card
 
-![Board](doc/board.png)
-
 
 # How to Play
-
+Each card has an associated colour and name. 
+1. Click one and remember it.
+2. The cards will be shuffled and redisplayed. 
+3. Click one that you have yet to click.
+4. Repeat as long as possible.
 
 # Features
 
