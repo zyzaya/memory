@@ -3,6 +3,11 @@
   height: 100vh;
 }
 
+.App {
+  max-width: 800px;
+  margin: auto;
+}
+
 .App > header {
   display: flex;
   justify-content: space-between;
